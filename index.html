@@ -423,9 +423,21 @@ async function setupPush(){ try{ const messaging = getMessaging(app); let perm =
 setupPush();
 </script>
 <script>
-if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/firebase-messaging-sw.js').then(()=> console.log('✅ SW Ready')).catch(e=> console.log('SW Fail', e)); }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('firebase-messaging-sw.js')
+    .then(() => console.log('✅ SW Ready'))
+    .catch((e) => console.log('SW Fail', e));
+}
+
 // Fallback: Module লোড না হলেও বাটন চাপলে সতর্ক করবে
-setTimeout(()=>{ if(!window.__amarReady){ let lb=document.getElementById('loginBtn'); if(lb) lb.onclick=()=>alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে... নেট চালু আছে কিনা দেখো'); let sb=document.getElementById('signupBtn'); if(sb) sb.onclick=()=>alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে...'); } },3000);
+setTimeout(() => {
+  if (!window.__amarReady) {
+    let lb = document.getElementById('loginBtn');
+    if (lb) lb.onclick = () => alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে... নেট চালু আছে কিনা দেখো');
+    let sb = document.getElementById('signupBtn');
+    if (sb) sb.onclick = () => alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে...');
+  }
+}, 3000);
 </script>
 </body>
 </html>
