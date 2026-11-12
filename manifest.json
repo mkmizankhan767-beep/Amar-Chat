@@ -1,13 +1,20 @@
+
 {
-  "name": "AmarChat Pro",
+  "name": "AmarChat",
   "short_name": "AmarChat",
   "start_url": "/Amar-Chat/",
+  "scope": "/Amar-Chat/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#075E54",
+  "background_color": "#075e54",
+  "theme_color": "#075e54",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/733/733585.png",
+      "src": "https://ui-avatars.com/api/?name=A&background=075e54&color=fff&size=192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://ui-avatars.com/api/?name=A&background=075e54&color=fff&size=512",
       "sizes": "512x512",
       "type": "image/png"
     }
