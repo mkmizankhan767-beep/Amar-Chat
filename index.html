@@ -4,7 +4,7 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#075e54">
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AmarChat - Pro Final</title>
- <!-- SHARE PREVIEW - Amar Chat -->
+<!-- SHARE PREVIEW - Amar Chat -->
 <meta property="og:title" content="Amar Chat - আমার সেট 💚">
 <meta property="og:description" content="💬 Amar Chat ডাউনলোড করো! চ্যাট • লাভ • কানেক্ট 💚 ১০০% ফ্রি অ্যাপ। বন্ধুদের সাথে চ্যাট, ছবি, ভয়েস, ভিডিও কল করো।">
 <meta property="og:image" content="https://mkmizankhan767-beep.github.io/Amar-Chat/icon.png">
@@ -141,7 +141,6 @@ body.dark .msg.me{background:#005c4b !important;color:white !important}
 </style>
 </head>
 <body>
- <!-- উপরে ২টা বাটন পাশাপাশি -->
 <!-- উপরে ২টা বাটন পাশাপাশি -->
 <div style="display:flex;gap:8px;margin:10px;">
 
@@ -189,7 +188,7 @@ function shareAmarChat(){
   </div>
 
   <div id="typingText" style="margin-top:28px;color:white;font-size:46px;font-weight:900;letter-spacing:1px;text-shadow:0 0 20px rgba(255,255,255,0.6),0 4px 20px rgba(0,0,0,0.4);min-height:60px;"></div>
-  <div style="color:#eafff3;font-size:28px;margin-top:2px;text-shadow:0 2px 10px rgba(0,0,0,0.3);">𒆜 𝐀𝐦𝐚𝐫 𝐂𝐡𝐚𝐭 𒆜 💚</div>
+  <div style="color:#eafff3;font-size:28px;margin-top:2px;text-shadow:0 2px 10px rgba(0,0,0,0.3);">𒆜 𝐀𝐦𝐚𝐫 𝐂𝐡𝐚𝐭 𒆜 💝</div>
   <div style="color:rgba(255,255,255,0.9);font-size:13px;margin-top:8px;letter-spacing:3px;">তুমি আছো তাই আমি ভালো আছি।</div>
 
   <div style="margin-top:30px;width:260px;height:26px;background:rgba(0,0,0,0.35);border:2.5px solid white;border-radius:30px;overflow:hidden;position:relative;">
@@ -543,21 +542,9 @@ async function setupPush(){ try{ const messaging = getMessaging(app); let perm =
 setupPush();
 </script>
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('firebase-messaging-sw.js')
-    .then(() => console.log('✅ SW Ready'))
-    .catch((e) => console.log('SW Fail', e));
-}
-
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/firebase-messaging-sw.js').then(()=> console.log('✅ SW Ready')).catch(e=> console.log('SW Fail', e)); }
 // Fallback: Module লোড না হলেও বাটন চাপলে সতর্ক করবে
-setTimeout(() => {
-  if (!window.__amarReady) {
-    let lb = document.getElementById('loginBtn');
-    if (lb) lb.onclick = () => alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে... নেট চালু আছে কিনা দেখো');
-    let sb = document.getElementById('signupBtn');
-    if (sb) sb.onclick = () => alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে...');
-  }
-}, 3000);
+setTimeout(()=>{ if(!window.__amarReady){ let lb=document.getElementById('loginBtn'); if(lb) lb.onclick=()=>alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে... নেট চালু আছে কিনা দেখো'); let sb=document.getElementById('signupBtn'); if(sb) sb.onclick=()=>alert('⏳ একটু অপেক্ষা করো, Firebase লোড হচ্ছে...'); } },3000);
 </script>
 </body>
 </html>
